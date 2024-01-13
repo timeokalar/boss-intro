@@ -61,9 +61,8 @@ export const InputForm = () => {
             <ImageUploader imageList={bossImage} />
           </div>
         </div>
+        <Button onClick={() => navigate("intro")}>Generate Intro</Button>
       </div>
-      <Button onClick={() => navigate("butt")}>Click Me!</Button>
-      <Button onClick={() => console.log(bossImage)}>Click Me!</Button>
     </>
   );
 };

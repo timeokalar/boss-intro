@@ -14,7 +14,7 @@ root.render(
       <BrowserRouter>
         <Routes>
           <Route path='/' Component={InputForm} />
-          <Route path='/butt' Component={BossIntro} />
+          <Route path='/intro' Component={BossIntro} />
         </Routes>
       </BrowserRouter>
     </RecoilRoot>

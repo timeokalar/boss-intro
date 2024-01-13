@@ -11,6 +11,7 @@ import {
   bossImageState,
 } from "../../state/atoms";
 import { useRecoilValue } from "recoil";
+import sound_only from "./sound_only.jpg";
 
 function BossIntro() {
   const lineOne = useRecoilValue(lineOneState);
@@ -44,7 +45,11 @@ function BossIntro() {
         id="iframeAudio"
         title="dooraudio"
       ></iframe>
-      <img className="boss-sprite" src={bossImage[0].data_url} alt="boss" />
+      <img
+        className="boss-sprite"
+        src={bossImage[0]?.data_url || sound_only}
+        alt="boss"
+      />
       <p className="blurb">{blurb}</p>
     </>
   );

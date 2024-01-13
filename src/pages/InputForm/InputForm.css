@@ -1,0 +1,24 @@
+.input-grid {
+  margin: 20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+
+.grid-text-field {
+  width: 100%;
+  margin-top: 50%;
+}
+.text-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-cell {
+  grid-column: 0 / 2;
+}
+.image-input {
+  grid-column: 2;
+  grid-row: 4 / 1;
+}

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ImageUploading from "react-images-uploading";
 import { useRecoilState } from "recoil";
 import { bossImageState } from "../../state/atoms";

@@ -1,5 +1,4 @@
 import "./BossIntro.css";
-import b from "./b.png";
 import song from "./song2.mp3";
 import "./crt.css";
 import {
@@ -13,7 +12,6 @@ import {
 } from "../../state/atoms";
 import { useRecoilValue } from "recoil";
 
-var blurb = "He went To the Capitol To Stop The Steal";
 function BossIntro() {
   const lineOne = useRecoilValue(lineOneState);
   const lineTwo = useRecoilValue(lineTwoState);

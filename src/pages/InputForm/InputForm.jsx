@@ -1,4 +1,4 @@
-import { useState, React } from "react";
+import { React } from "react";
 import "./InputForm.css";
 import { Button, TextField } from "@material-ui/core";
 import { ImageUploader } from "./ImageUploader";
@@ -30,7 +30,7 @@ export const InputForm = () => {
   const [lineFour, setLineFour] = useRecoilState(lineFourState);
   const [firstName, setFirstName] = useRecoilState(firstNameState);
   const [secondName, setSecondName] = useRecoilState(secondNameState);
-  const [bossImage, setBossImage] = useRecoilState(bossImageState);
+  const [bossImage] = useRecoilState(bossImageState);
 
   let navigate = useNavigate();
   return (

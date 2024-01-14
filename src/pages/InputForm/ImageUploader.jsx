@@ -16,7 +16,7 @@ export const ImageUploader = () => {
       onChange={onChange}
       maxNumber={maxNumber}
       dataURLKey="data_url"
-      acceptType={["jpg"]}
+      acceptType={["jpg", "gif", "png"]}
     >
       {({
         imageList,

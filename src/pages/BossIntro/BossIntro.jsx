@@ -1,6 +1,6 @@
 import "./BossIntro.css";
 import song from "./song2.mp3";
-import "./crt.css";
+// import "./crt.css";
 import {
   lineOneState,
   lineTwoState,
@@ -30,12 +30,14 @@ function BossIntro() {
     <>
       <div className="flash"></div>
       <div className="grid crt">
-        <div className="background-panel">
-          <p className="crt-text">{firstName.toUpperCase()}</p>
+        <div className="background-panel-top">
+          <p className="crt-text name-text">{firstName.toUpperCase()}</p>
+          <p className="crt-text black-text">{firstName.toUpperCase()}</p>
         </div>
         <div className="middle-panel"></div>
-        <div className="background-panel flipped">
-          <p className="flipped crt-text">{secondName.toUpperCase()}</p>
+        <div className="background-panel-bottom ">
+          <p className="crt-text name-text ">{secondName.toUpperCase()}</p>
+          <p className="crt-text black-text ">{secondName.toUpperCase()}</p>
         </div>
       </div>
       <iframe

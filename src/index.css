@@ -5,9 +5,11 @@ body {
   font-weight: bolder;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 .root {
   height: 100%;
   --first-time-break: 2000ms;
+  
 }

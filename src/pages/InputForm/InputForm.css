@@ -1,18 +1,23 @@
 .input-grid {
-  margin: 20%;
+  
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
+  background-color: rgb(48, 136, 64);
+  width: 95%;
+  margin: 2.5%;
+  font-family: 'mmx';
 }
 
 .grid-text-field {
   width: 100%;
   margin-top: 50%;
+  background-color: white;
 }
 .text-cell {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 27px;
 }
 
 .name-cell {
@@ -20,5 +25,47 @@
 }
 .image-input {
   grid-column: 2;
-  grid-row: 4 / 1;
+  grid-row: 6 / 1;
+}
+
+@font-face {
+  font-family: "mmx";
+  src: url(./mega-man-x/a.ttf);
+}
+
+.image-column {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  
+}
+
+.border {
+border-image-slice: 27 27 27 27;
+border-image-width: 20px 20px 20px 20px;
+border-image-outset: 0px 0px 0px 0px;
+border-image-repeat: stretch stretch; 
+border-style: solid;
+border-image-source: url('./border.png');
+}
+
+.generate-button{
+  margin: 27px !important;
+}
+
+.upload-button {
+  background-color: black;
+  width: 40vh;
+  height: 40vh;
+  margin: 27px;
+  font-size: 2rem;
+  color: pink;
+  padding: 27px;
+}
+
+.upload-prompt-text {
+  background: linear-gradient(180deg, rgba(26,191,198,1) 0%, rgba(255,255,255,1) 38%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 62%, rgba(26,191,198,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3vh;
 }

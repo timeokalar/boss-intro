@@ -35,7 +35,7 @@
 }
 
 
-.background-panel {
+.background-panel-top {
   background: linear-gradient(0deg, rgba(255,255,255,1) 14%, rgba(216,216,216,1) 34%, rgba(139,139,139,1) 58%, rgba(89,89,89,1) 73%, rgba(60,60,60,1) 83%, rgba(34,34,34,1) 100%);
   display: flex;
   justify-content: center;
@@ -43,6 +43,13 @@
   overflow: hidden;
 }
 
+.background-panel-bottom {
+  background: linear-gradient(180deg, rgba(255,255,255,1) 14%, rgba(216,216,216,1) 34%, rgba(139,139,139,1) 58%, rgba(89,89,89,1) 73%, rgba(60,60,60,1) 83%, rgba(34,34,34,1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 .flipped{
   transform: scaleY(-1);
 }
@@ -65,6 +72,31 @@
 	animation: resize 800ms linear 1200ms forwards;
 }
 
+.name-text {
+  background-image: url('./lines.png');
+  background-color: black;
+  background-repeat:repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: jetBlue 12000ms linear 5500ms both;
+  position:absolute;
+}
+
+@keyframes jetBlue{
+  0% {
+    background-position-x: 0% ;
+    opacity: 0;
+  }
+  1% {
+    background-position-x: 500%;
+    opacity: 100%;
+  }
+  100% {
+    background-position-x: 1000%;
+    opacity: 100;
+  }
+}
 @keyframes textPopIn {
   from {
     opacity: 0;

@@ -35,7 +35,7 @@ export const InputForm = () => {
   let navigate = useNavigate();
   return (
     <>
-      <div className="input-grid">
+      <div className="input-grid border">
         <div>
           <div className="text-cell">
             <LocalTextField value={firstName} setValue={setFirstName} />
@@ -61,7 +61,13 @@ export const InputForm = () => {
             <ImageUploader imageList={bossImage} />
           </div>
         </div>
-        <Button onClick={() => navigate("intro")}>Generate Intro</Button>
+        <Button
+          className="generate-button"
+          onClick={() => navigate("intro")}
+          variant="contained"
+        >
+          Generate Intro
+        </Button>
       </div>
     </>
   );

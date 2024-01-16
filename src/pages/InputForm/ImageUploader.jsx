@@ -1,12 +1,15 @@
 import ImageUploading from "react-images-uploading";
 import { useRecoilState } from "recoil";
 import { bossImageState } from "../../state/atoms";
+import { Button } from "@material-ui/core";
+import CancelIcon from "@mui/icons-material/Cancel";
 export const ImageUploader = () => {
   const [images, setImages] = useRecoilState(bossImageState);
   const maxNumber = 1;
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
     console.log(imageList, addUpdateIndex);
+    setImages(null);
     setImages(imageList);
   };
 
@@ -16,7 +19,7 @@ export const ImageUploader = () => {
       onChange={onChange}
       maxNumber={maxNumber}
       dataURLKey="data_url"
-      acceptType={["jpg", "gif", "png"]}
+      acceptType={[]}
     >
       {({
         imageList,
@@ -29,23 +32,46 @@ export const ImageUploader = () => {
       }) => (
         // write your building UI
         <div className="upload__image-wrapper">
-          <button
-            style={isDragging ? { color: "red" } : null}
+          <div
+            className="upload-button border"
+            // style={isDragging ? { color: "red" } : null}
+            style={
+              imageList.length > 0
+                ? {
+                    backgroundImage: `url(${imageList[0].data_url})`,
+                    backgroundSize: "cover",
+                  }
+                : isDragging
+                ? { backgroundColor: "red" }
+                : null
+            }
             onClick={onImageUpload}
             {...dragProps}
           >
-            Click or Drop here
-          </button>
-          &nbsp;
-          <button onClick={onImageRemoveAll}>Remove all images</button>
-          {imageList.map((image, index) => (
-            <div key={index} className="image-item">
-              <img src={image.data_url} alt="" width="100" />
-              <div className="image-item__btn-wrapper">
-                <button onClick={() => onImageUpdate(index)}>Update</button>
-              </div>
+            <div className="upload-prompt-text ">
+              {imageList.length === 0 ? (
+                "Drag image here, or click to select a file. For direct links to images, paste the URL into the file selector."
+              ) : (
+                <div>
+                  <CancelIcon
+                    onClick={onImageRemoveAll}
+                    style={{ display: "flex" }}
+                  ></CancelIcon>
+                </div>
+              )}
             </div>
-          ))}
+            <CancelIcon onClick={onImageRemoveAll}></CancelIcon>
+          </div>
+          <center>
+            <Button
+              onClick={onImageRemoveAll}
+              variant="contained"
+              disabled={imageList.length < 1}
+            >
+              {" "}
+              Clear Image
+            </Button>
+          </center>
         </div>
       )}
     </ImageUploading>

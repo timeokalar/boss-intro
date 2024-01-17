@@ -83,6 +83,17 @@
   position:absolute;
 }
 
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-cell {
+  font-size: 3vh;
+}
+
 @keyframes jetBlue{
   0% {
     background-position-x: 0% ;

@@ -68,4 +68,22 @@ border-image-source: url('./border.png');
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 3vh;
+  margin: 27px 3px 0;
+  width: 80%;
+}
+
+.description-header {
+  font-size: 8vh;
+}
+
+.description-grid {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-auto-rows: 30vh;
+}
+
+.image-preview {
+  background-color: black;
+  height: 40vh;
+  width: 40vh;
 }

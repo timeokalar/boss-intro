@@ -1,31 +1,27 @@
 import "./BossIntro.css";
 import song from "./song2.mp3";
-// import "./crt.css";
-import {
-  lineOneState,
-  lineTwoState,
-  lineThreeState,
-  lineFourState,
-  firstNameState,
-  secondNameState,
-  bossImageState,
-} from "../../state/atoms";
+import "./crt.css";
+import { bossImageState } from "../../state/atoms";
 import { useRecoilValue } from "recoil";
 import sound_only from "./sound_only.jpg";
+import { useSearchParams } from "react-router-dom";
 
 function BossIntro() {
-  const lineOne = useRecoilValue(lineOneState);
-  const lineTwo = useRecoilValue(lineTwoState);
-  const lineThree = useRecoilValue(lineThreeState);
-  const lineFour = useRecoilValue(lineFourState);
-  const firstName = useRecoilValue(firstNameState);
-  const secondName = useRecoilValue(secondNameState);
   const bossImage = useRecoilValue(bossImageState);
 
-  const blurb = `${lineOne.toUpperCase()}
-  ${lineTwo.toUpperCase()}
-  ${lineThree.toUpperCase()}
-  ${lineFour.toUpperCase()}`;
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const firstLine = searchParams.get("l1");
+  const secondLine = searchParams.get("l2");
+  const thirdLine = searchParams.get("l3");
+  const fourthLine = searchParams.get("l4");
+  const firstName = searchParams.get("name1");
+  const secondName = searchParams.get("name2");
+  const bossImageFromParam = searchParams.get("img");
+  const blurb = `${firstLine.toUpperCase()}
+  ${secondLine.toUpperCase()}
+  ${thirdLine.toUpperCase()}
+  ${fourthLine.toUpperCase()}`;
   return (
     <>
       <div className="flash"></div>
@@ -49,7 +45,7 @@ function BossIntro() {
       ></iframe>
       <img
         className="boss-sprite"
-        src={bossImage[0]?.data_url || sound_only}
+        src={bossImageFromParam || bossImage[0]?.data_url || sound_only}
         alt="boss"
       />
       <p className="blurb">{blurb}</p>

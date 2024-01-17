@@ -27,12 +27,12 @@ function BossIntro() {
       <div className="flash"></div>
       <div className="grid crt">
         <div className="background-panel-top">
-          <p className="crt-text name-text">{firstName.toUpperCase()}</p>
+          <p className="name-text">{firstName.toUpperCase()}</p>
           <p className="crt-text black-text">{firstName.toUpperCase()}</p>
         </div>
         <div className="middle-panel"></div>
         <div className="background-panel-bottom ">
-          <p className="crt-text name-text ">{secondName.toUpperCase()}</p>
+          <p className="name-text ">{secondName.toUpperCase()}</p>
           <p className="crt-text black-text ">{secondName.toUpperCase()}</p>
         </div>
       </div>

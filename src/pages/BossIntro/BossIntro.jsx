@@ -5,6 +5,7 @@ import { bossImageState } from "../../state/atoms";
 import { useRecoilValue } from "recoil";
 import sound_only from "./sound_only.jpg";
 import { useSearchParams } from "react-router-dom";
+import * as LZString from "lz-string";
 
 function BossIntro() {
   const bossImage = useRecoilValue(bossImageState);
@@ -45,7 +46,11 @@ function BossIntro() {
       ></iframe>
       <img
         className="boss-sprite"
-        src={bossImageFromParam || bossImage[0]?.data_url || sound_only}
+        src={
+          LZString.decompressFromEncodedURIComponent(bossImageFromParam) ||
+          bossImage[0]?.data_url ||
+          sound_only
+        }
         alt="boss"
       />
       <p className="blurb">{blurb}</p>

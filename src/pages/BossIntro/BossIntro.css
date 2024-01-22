@@ -10,6 +10,17 @@
   animation: bossBrightness 1ms steps(1, end) 5600ms forwards;
 }
 
+.share-button {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  height: 4.5vh;
+  width: 8vw;
+  right: 0;
+  border: 5px solid blue;
+  opacity: 0;
+  animation: fadeIn 300ms linear 5600ms 1 forwards;
+}
 .blurb {
   font-size: 6vh;
   font-weight: bold;
@@ -138,6 +149,14 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0%
+  }
+  to { 
+    opacity: 100%
+  }
+}
 @keyframes resize {
 	0% {
 		grid-template-rows: 0 20fr 0;

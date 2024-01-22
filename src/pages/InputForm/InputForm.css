@@ -6,10 +6,11 @@
   width: 95%;
   margin: 2.5%;
   font-family: 'mmx';
+  height: 80vh;
 }
 
 .grid-text-field {
-  width: 100%;
+  width: 80%;
   margin-top: 50%;
   background-color: white;
 }
@@ -86,4 +87,17 @@ border-image-source: url('./border.png');
   background-color: black;
   height: 40vh;
   width: 40vh;
+}
+
+.labels-column {
+  display: grid;
+}
+
+.inputs-column {
+  display: grid;
+}
+
+.button-cell {
+  grid-row: 3;
+  grid-column: 1 / -1;
 }
